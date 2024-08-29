@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Be Caring</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <!-- Move to up button -->
+    <div class="scroll-button">
+      <a href="#home"><i class="fas fa-arrow-up"></i></a>
+    </div>
+    <!-- Home Section Start -->
+    <section class="home" id="home">
+      <div class="home-content">
+        <div class="text">
+          <div class="text-one">Be Caring,</div>
+          <div class="text-two">You are your society</div>
+          <div class="text-three">Designed to care</div>
+          <div class="text-four">so start from here!</div>
+        </div>
+        </div>
+    </section>
+
+    <!-- About Section Start -->
+    <section class="about" id="about">
+      <div class="content">
+        <div class="title"><span>About Us</span></div>
+        <div class="about-details">
+          <div class="left"></div>
+          <div class="right">
+            <div class="topic">Caring Is Our Passion</div>
+            <p>
+              We must all try to empathize before we criticize. Ask someone
+              what’s wrong before telling them they are wrong. – Simon Sinek
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Facts Section Start -->
+    <!-- Section Tag and Other Div will be the same same where I need to put same CSS -->
+    <section class="skills" id="skills">
+      <div class="content">
+        <div class="title"><span>Facts</span></div>
+        <div class="skills-details">
+          <div class="text">
+            <div class="topic">
+              Knowing facts is the starting point for caring
+            </div>
+            <p>
+              Every story has three or even four sides. Find the most objective
+              by knowing facts. We believe it is the best starting point of
+              caring for others. <br>
+              The facts you see on this page is about people with disability (PWD) in Singapore and their reasons for being unable to work.<br>
+              Toggle the bar chart by using the provided buttons to focus on the data you want to reflect on.<br>
+              Focus on how we can support them further to be active members of the society.
+            </p>
+            <div class="experience">
+              <div class="num">15</div>
+              <div class="exp">
+                Years Of <br />
+                Caring
+              </div>
+            </div>
+          </div>
+          <div class="boxes">
+            <div class="box">
+              <div class="topic">Distribution</div>
+              <div class="button">
+                <button onclick="toggledata(0)">2022-2023</button>
+              </div>
+              <div>
+                  <canvas id="myChart"></canvas>
+                </div>
+              <div class="per">
+                <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                
+                <script>
+                  
+                const ctx = document.getElementById('myChart');
+                
+                  const myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                      labels: ['Too old/Poor health/Disabled', 'Education/Training Related', 'Family Responsibilities'],
+                      datasets: [{
+                        label: 'Reasons for not working 2022-2023',
+                        data: [76.2, 12.7, 5.3],
+                                              },{
+                        label: 'Reasons for not working 2021-2022',
+                         data: [77.3, 10.9, 5.2],}]
+                    },
+                    options: {
+                      borderWidth: 1,
+                      scales: {
+                        y: {
+                          beginAtZero: true
+                        }
+                      }
+                    }
+                  });
+                  function toggledata (value) {
+                    const showValue = myChart.isDatasetVisible(value);
+                    if (showValue === true) { 
+                    myChart.hide(value)
+                    }
+                    if (showValue === false) { 
+                      myChart.show(value)}
+                    console.log (myChart.isDatasetVisible(0)(value)); //to test the onclick function as true or false
+                    };
+                </script>
+                 
+              </div>
+            </div>
+            <div class="box">
+              <div class="topic">Previous Data</div>
+              <div class="button1">
+                <button onclick="toggledata(1)">2021-2022</button>    
+              <script>
+              function toggledata (value) {
+                const showValue = myChart.isDatasetVisible(value);
+                if (showValue === true) { 
+                myChart.hide(value)
+                 }
+                if (showValue === false) { 
+                myChart.show(value)}
+                }
+              </script>
+              </div>
+              <div class="per">
+                <canvas id="bar-chart" width="800" height="450"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Activities Section Start -->
+    <section class="services" id="services">
+      <div class="content">
+        <div class="title"><span>Activities</span></div>
+        <div class="boxes">
+          <div class="box">
+            <div class="icon">
+              <i class="fas fa-desktop"></i>
+            </div>
+            <div class="topic">Surveys</div>
+            <p>Fact-based resource allocation and activities formulation</p>
+          </div>
+          <div class="box">
+            <div class="icon">
+              <i class="fas fa-paint-brush"></i>
+            </div>
+            <div class="topic">Befriending</div>
+            <p>Personalised befriending activities with measures</p>
+          </div>
+          <div class="box">
+            <div class="icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="topic">Output and outlook</div>
+            <p>Measure tangible and intangible output and outlook</p>
+          </div>
+          <div class="box">
+            <div class="icon">
+              <i class="fab fa-android"></i>
+            </div>
+            <div class="topic">Technology integration</div>
+            <p>
+              Technology integration for our activities for traceability and
+              accountability
+            </p>
+          </div>
+          <div class="box">
+            <div class="icon">
+              <i class="fas fa-camera-retro"></i>
+            </div>
+            <div class="topic">Documentation</div>
+            <p>Photographic and video documentations for sharing memories</p>
+          </div>
+          <div class="box">
+            <div class="icon">
+              <i class="fas fa-tablet-alt"></i>
+            </div>
+            <div class="topic">Learning</div>
+            <p>
+              Skill-based enrichment to upskill our brothers and sisters in need
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Us section Start -->
+    <section class="contact" id="contact">
+      <div class="content">
+        <div class="title"><span>Contact Us</span></div>
+        <div class="text">
+          <div class="topic">Have resources to share or project ideas?</div>
+          <p>
+            Please contact us by our email: info@becaring.org if you would like to donate or sharing new project
+            ideas.
+          </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section Start -->
+    <footer>
+      <link type = text/javascript, src="script2.js"link>
+      <div class="text">
+        <span
+          >Created By <a href="#">Care 4 Society</a> | &#169; 2024 All Rights
+          Reserved</span
+        >
+      </div>
+    </footer>
+
+    
+
+    
+  </body>
+</html>
